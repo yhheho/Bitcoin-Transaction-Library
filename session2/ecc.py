@@ -1,4 +1,6 @@
 from unittest import TestCase
+from io import BytesIO
+from session2.helper import double_sha256, encode_base58, hash160
 
 
 class FieldElement:
@@ -131,7 +133,6 @@ class Point:
         return product
 
 
-
 A = 0
 B = 7
 P = 2**256 - 2**32 - 977
@@ -140,8 +141,8 @@ N = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 
 class S256Field(FieldElement):
 
-    def __init__(self, num, prime = None):
-        super.__init__(num=num, prime=p)
+    def __init__(self, num, prime=None):
+        super().__init__(num=num, prime=P)
 
     def hex(self):
         return '{:x}'.format(self.num).zfill(64)
@@ -163,5 +164,59 @@ class S256Point(Point):
         else:
             super().__init__(x=x, y=y, a=a, b=b)
 
+    def __repr__(self):
+        if self.x is None:
+            return 'Point(infinity)'
+        else:
+            return 'Point({}, {})'.format(self.x, self.y)
 
+    def __rmul__(self, coefficient):
+        # 因為最大是 2^256
+        # 所以把 N 取 mod 後剩下的數一定可以用 256 bits 表示
+        # 那麼只要將 mod 後的數對每個位元看是否是1來判斷要不要累加即可得到結果
+
+        coef = coefficient % N
+        current = self
+
+        # result is what we return, starts at 0
+        result = S256Point(None, None)
+
+        # we double 256 times and add where there is a 1 in the binary
+        # representation of coefficient
+        for i in range(self.bits):
+            if coef & 1:
+                result += current
+
+            current += current
+            # we shift the coefficient to the right
+            coef >>= 1
+        return result
+
+    def sec(self, compressed=True):
+        if compressed:
+            if self.y.num % 2 == 0:
+                return b'\x02' + self.x.num.to_bytes(32, 'big')
+            else:
+                return b'\x03' + self.x.num.to_bytes(32, 'big')
+        else:
+            return b'\x04' + self.x.num.to_bytes(32, 'big') + self.y.num.to_bytes(32, 'big')
+
+    def address(self, compressed=True, testnet=False):
+        sec = self.sec(compressed)
+        h160 = hash160(sec)
+
+        if testnet:
+            prefix = b'\x6f'
+        else:
+            prefix = b'\x00'
+
+        raw = prefix + h160
+        checksum = double_sha256(raw)[:4]
+        address = encode_base58(raw + checksum)
+        return address.decode('ascii')
+
+
+G = S256Point(
+    0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798,
+    0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8)
 

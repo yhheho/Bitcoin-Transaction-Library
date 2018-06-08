@@ -1,4 +1,6 @@
-from session2.ecc import FieldElement, Point
+from session2.ecc import FieldElement, Point, G
+from session2.helper import hash160, double_sha256, encode_base58
+
 
 class Exercise2:
 
@@ -95,3 +97,68 @@ class Exercise2:
 
     @staticmethod
     def exercise4_4():
+        # this exercise is confirming n*G = 0
+        Exercise2.print_divider()
+        n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+        # n = 0x0A
+        print(n * G)
+
+    @staticmethod
+    def exercise4_5():
+        Exercise2.print_divider()
+        secret = 999
+        point = secret*G
+        print(point)
+
+    @staticmethod
+    def exercise5_1():
+        Exercise2.print_divider()
+        secrets = (7, 1485, 2 ** 128, 2 ** 240 + 2 ** 31)
+
+        # iterate over secrets
+        for secret in secrets:
+            # get the public point
+            print(secret * G)
+
+    @staticmethod
+    def exercise6_1():
+        Exercise2.print_divider()
+        secrets = (999 ** 3, 123, 42424242)
+
+        for secret in secrets:
+            point = secret * G
+            print(point.sec(True))
+            # uncompressed = b'\x04' + point.x.num.to_bytes(32, 'big') + point.y.num.to_bytes(32, 'big')
+            #
+            # if point.y.num % 2 == 0:
+            #     compressed = b'\x02' + point.x.num.to_bytes(32, 'big')
+            # else:
+            #     compressed = b'\x03' + point.x.num.to_bytes(32, 'big')
+            #
+            # print(uncompressed.hex())
+            # print(compressed.hex())
+
+    @staticmethod
+    def exercise7_1():
+        Exercise2.print_divider()
+        secrets = ((True, 888**3), (False, 321), (False, 4242424242))
+
+        for compressed, secret in secrets:
+
+            p = secret * G
+            sec = p.sec(compressed)
+            h160 = hash160(sec)
+
+            for prefix in (b'\x00', b'\x6f'):
+                raw = prefix + h160
+                checksum = double_sha256(raw)[:4]
+                total = raw + checksum
+                address = encode_base58(total).decode('ascii')
+                if prefix == b'\x00':
+                    print("mainnet: " + address)
+                else:
+                    print("testnet: " + address)
+
+
+
+

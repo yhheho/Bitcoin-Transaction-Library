@@ -12,11 +12,16 @@ def session1():
 
 
 def session2():
-    Exercise2.exercise1_1()
-    Exercise2.exercise2_1()
-    Exercise2.exercise3_1()
-    Exercise2.exercise4_1()
-    Exercise2.exercise4_3()
+    # Exercise2.exercise1_1()
+    # Exercise2.exercise2_1()
+    # Exercise2.exercise3_1()
+    # Exercise2.exercise4_1()
+    # Exercise2.exercise4_3()
+    Exercise2.exercise4_4()
+    Exercise2.exercise4_5()
+    Exercise2.exercise5_1()
+    Exercise2.exercise6_1()
+    Exercise2.exercise7_1()
 
 
 def main():
