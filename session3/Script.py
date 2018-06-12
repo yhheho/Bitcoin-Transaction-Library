@@ -10,7 +10,7 @@ class Script:
         result = ''
         for element in self.elements:
             if type(element) == int:
-                result += '{}'.format(OP_CODES[element])
+                result += '{} '.format(OP_CODES[element])
             else:
                 result += '{} '.format(element.hex())
         return result
@@ -24,6 +24,40 @@ class Script:
             op_code = current[0]
             if op_code > 0 and op_code <= 75:
                 elements.append(s.read(op_code))
+            else:
+              elements.append(op_code)
+            current = s.read(1)
+        return cls(elements)
+
+    def type(self):
+        if len(self.elements) == 0:
+            return 'blank'
+        elif self.elements[0] == 0x76 \
+            and self.elements[1] == 0xa9 \
+            and type(self.elements[2]) == bytes \
+            and len(self.elements[2]) == 0x14 \
+            and self.elements[3] == 0x88 \
+            and self.elements[4] == 0xac:
+            # p2pkh:
+            # OP_DUP OP_HASH160 <20-byte hash> <OP_EQUALVERIFY> <OP_CHECKSIG>
+            return 'p2pkh'
+        elif type(self.elements[0]) == bytes \
+            and len(self.elements[0]) in (0x47, 0x48, 0x49) \
+            and type(self.elements[1]) == bytes \
+            and len(self.elements[1]) in (0x21, 0x41):
+            # p2pkh scriptSig:
+            # <signature> <pubkey>
+            return 'p2pkh sig'
+        elif len(self.elements) > 1 \
+            and type(self.elements[1]) == bytes \
+            and len(self.elements[1]) in (0x47, 0x48, 0x49) \
+            and self.elements[-1][-1] == 0xae:
+            # HACK: assumes p2sh is a multisig
+            # p2sh multisig:
+            # <x> <sig1> ... <sigm> <redeemscript ends with OP_CHECKMULTISIG>
+            return 'p2sh sig'
+        else:
+            return 'unknown'
 
 
 

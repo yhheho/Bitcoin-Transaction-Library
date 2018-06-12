@@ -1,5 +1,6 @@
 from io import BytesIO
 from session3.helper import little_endian_to_int, read_varint, encode_varint
+from session3.Script import Script
 
 
 class Tx:
@@ -48,7 +49,7 @@ class TxIn:
     def __init__(self, prev_tx, prev_index, script_sig, sequence):
         self.prev_tx = prev_tx
         self.prev_index = prev_index
-        self.scrip_sig = script_sig
+        self.script_sig = Script.parse(script_sig)
         self.sequence = sequence
 
     def __repr__(self):
@@ -71,7 +72,10 @@ class TxOut:
 
     def __init__(self, amount, script_pubkey):
         self.amount = amount
-        self.script_pubkey = script_pubkey
+        self.script_pubkey = Script.parse(script_pubkey)
+
+    def __repr__(self):
+        return '{}:{}'.format(self.amount, self.script_pubkey)
 
     @classmethod
     def parse(cls, s):
