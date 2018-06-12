@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa3f47b2-d75e-4a73-8aee-5cf73107e964" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/session3/Script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/session3/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/session3/ecc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/session3/exercise3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/session3/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/session3/Tx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hello.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session3/Script.py" beforeDir="false" afterPath="$PROJECT_DIR$/session3/Script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session3/exercise3.py" beforeDir="false" afterPath="$PROJECT_DIR$/session3/exercise3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session3/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/session3/helper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,20 +21,11 @@
       <file leaf-file-name="Hello.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state relative-caret-position="224">
+              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exercise1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/session1/exercise1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -64,11 +54,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Script.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Script.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/session3/Script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="227">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tx.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/session3/Tx.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,10 +78,10 @@
       <file leaf-file-name="exercise3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/session3/exercise3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+            <state relative-caret-position="258">
+              <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
               <folding>
-                <element signature="e#0#63#0" expanded="true" />
+                <element signature="e#0#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,8 +90,8 @@
       <file leaf-file-name="helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/session3/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="320">
+              <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -147,17 +149,18 @@
         <option value="$PROJECT_DIR$/session2/exercise2.py" />
         <option value="$PROJECT_DIR$/session2/ecc.py" />
         <option value="$PROJECT_DIR$/session3/ecc.py" />
-        <option value="$PROJECT_DIR$/session3/exercise3.py" />
-        <option value="$PROJECT_DIR$/Hello.py" />
-        <option value="$PROJECT_DIR$/session3/helper.py" />
         <option value="$PROJECT_DIR$/session3/Script.py" />
+        <option value="$PROJECT_DIR$/session3/helper.py" />
+        <option value="$PROJECT_DIR$/Hello.py" />
+        <option value="$PROJECT_DIR$/session3/Tx.py" />
+        <option value="$PROJECT_DIR$/session3/exercise3.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="510" />
-    <option name="y" value="33" />
-    <option name="width" value="1167" />
+    <option name="x" value="565" />
+    <option name="y" value="23" />
+    <option name="width" value="1103" />
     <option name="height" value="681" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -286,10 +289,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="510" y="33" width="1167" height="681" extended-state="0" />
+    <frame x="565" y="23" width="1103" height="681" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20565553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2175884" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
@@ -379,33 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/session3/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hello.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/session3/exercise3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/session3/ecc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -418,8 +394,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/session3/Script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="227">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hello.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session3/exercise3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session3/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session3/Tx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

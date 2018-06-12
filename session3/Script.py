@@ -15,6 +15,15 @@ class Script:
                 result += '{} '.format(element.hex())
         return result
 
+    @classmethod
+    def parse(cls, binary):
+        s = BytesIO(binary)
+        elements = []
+        current = s.read(1)
+        while current != b'':
+            op_code = current[0]
+            if op_code > 0 and op_code <= 75:
+                elements.append(s.read(op_code))
 
 
 

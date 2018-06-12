@@ -30,6 +30,7 @@ def session3():
     Exercise3.exercise1_2()
     Exercise3.exercise2_1()
     Exercise3.exercise3_1()
+    Exercise3.exercise8_1()
 
 
 def main():
