@@ -1,5 +1,6 @@
 from session1.exercise1 import Exercise1
 from session2.exercise2 import Exercise2
+from session3.exercise3 import Exercise3
 
 
 def session1():
@@ -24,9 +25,17 @@ def session2():
     Exercise2.exercise7_1()
 
 
+def session3():
+    Exercise3.exercise1_1()
+    Exercise3.exercise1_2()
+    Exercise3.exercise2_1()
+    Exercise3.exercise3_1()
+
+
 def main():
     # session1()
-    session2()
+    # session2()
+    session3()
     print('Hello Python')
 
 
