@@ -18,7 +18,7 @@ class Script:
     @classmethod
     def parse(cls, binary):
         s = BytesIO(binary)
-        print('binary: {}'.format(binary))
+        # print('binary: {}'.format(binary))
         # print('s: {}'.format(s))
         elements = []
         current = s.read(1)
@@ -66,7 +66,14 @@ class Script:
         else:
             return 'unknown'
 
-
+    def serialize(self):
+        result = b''
+        for element in self.elements:
+            if type(element) == int:
+                result += bytes([element])
+            else:
+                result += bytes(len([element])) + element
+        return result
 
 OP_CODES = {
   0: 'OP_0',
