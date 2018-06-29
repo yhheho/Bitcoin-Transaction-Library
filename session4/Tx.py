@@ -58,7 +58,7 @@ class Tx:
         return result
 
     def fee(self):
-        input_sum, output_sum = 0
+        input_sum, output_sum = 0, 0
         for tx_in in self.tx_ins:
             input_sum += tx_in.value()
 

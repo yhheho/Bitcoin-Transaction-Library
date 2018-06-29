@@ -44,3 +44,12 @@ class Exercise4:
         stream = BytesIO(bytes.fromhex(hex_tx))
         t = Tx.parse(stream)
         print(t.fee())
+
+    @staticmethod
+    def exercise5_2():
+        Exercise4.print_divider()
+        modified_tx = bytes.fromhex('0100000001813f79011acb80925dfe69b3def355fe914bd1d96a3f5f71bf8303c6a989c7d1000000001976a914a802fc56c704ce87c42d7c92eb75e7896bdc41ae88acfeffffff02a135ef01000000001976a914bc3b654dca7e56b04dca18f2566cdaf02e8d9ada88ac99c39800000000001976a9141c4bc762dd5423e332166702cb75f40df79fea1288ac1943060001000000')
+        h = double_sha256(modified_tx)
+        z = int.from_bytes(h, 'big')
+        print(h.hex())
+
